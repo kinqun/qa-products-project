@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import com.qa.product.parser.bean.Product;
 
 public class CsvReader {
-	private static final String PRODUCT_CSV_FILE_PATH = "C:\\Users\\kpqun\\Desktop\\qa\\pasta\\projectPasta\\product_parser\\src\\data\\products.csv";
+	private static final String PRODUCT_CSV_FILE_PATH = "C:\\JAVA_WORKSPACE\\qa\\product_parser_java\\src\\data\\products.csv";
 	
 	public ArrayList<Product> getProductsFromCsv(){
 		ArrayList<Product> productsList = null;

@@ -60,19 +60,30 @@ public class ProductService {
 	}
 	
 	public Product getHighestPricedProduct(ArrayList<Product> products) {
-		return products.stream().sorted((a,b)->(int)getFinalPrice(a) - (int)getFinalPrice(b)).collect(Collectors.toList()).get(products.size()-1);
+		return products.stream()
+				.sorted((a,b)->(int)getFinalPrice(a) - (int)getFinalPrice(b))
+				.collect(Collectors.toList())
+				.get(products.size()-1);
 	}
 	
 	public Product getLowestPricedProduct(ArrayList<Product> products) {
-		return products.stream().sorted((a,b)->(int)getFinalPrice(a) - (int)getFinalPrice(b)).collect(Collectors.toList()).get(0);
+		return products.stream()
+				.sorted((a,b)->(int)getFinalPrice(a) - (int)getFinalPrice(b))
+				.collect(Collectors.toList())
+				.get(0);
 	}
 	
 	public Product highestRatedProduct(ArrayList<Product> products) {
-		return products.stream().sorted((a,b)-> (int)(b.getRating() * 100) - (int)(a.getRating() * 100)).collect(Collectors.toList()).get(0);
+		return products.stream()
+				.sorted((a,b)-> (int)(b.getRating() * 100) - (int)(a.getRating() * 100))
+				.collect(Collectors.toList())
+				.get(0);
 	}
 	
 	public void showProductsByCategory(String category, ArrayList<Product> products) throws ProductNotFoundException{
-		List<Product> prods = products.stream().filter(prod->prod.getCategory().equals(category)).collect(Collectors.toList());
+		List<Product> prods = products.stream()
+				.filter(prod->prod.getCategory().equals(category))
+				.collect(Collectors.toList());
 		
 		if(prods.size() == 0) {
 			throw new ProductNotFoundException("invalid category...");

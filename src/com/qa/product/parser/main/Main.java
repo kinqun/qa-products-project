@@ -24,6 +24,7 @@ public class Main {
 		Product highestRatedProduct = prodService.highestRatedProduct(prodsList);
 		System.out.println("Highest Rated Product: " + highestRatedProduct.getName() + " - " + highestRatedProduct.getRating() + "/5.0");
 				
+		
 		try {
 			System.out.println("\n----------------------------------\nfilter by category\n------------------------------");
 			prodService.showProductsByCategory("Stationaryyyyyyy", prodsList);
